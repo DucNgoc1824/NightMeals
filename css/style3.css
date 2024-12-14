@@ -1,0 +1,348 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+a {
+  text-decoration: none;
+}
+.main-content {
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn {
+  border: none;
+  width: 204px;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  border-radius: 104px;
+  background: #ffbc04;
+  color: #081748;
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+header {
+  z-index: 100;
+  background: #081748;
+}
+.header .body {
+  display: flex;
+  padding: 46px 158px;
+  align-items: center;
+}
+.header {
+  position: sticky;
+  top: -5px;
+}
+.header .body .nav ul {
+  display: flex;
+  gap: 52px;
+}
+.header .logo {
+  color: #fdfdfd;
+  font-family: Questrial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.header .nav {
+  margin-left: 123px;
+}
+.header .nav a {
+  color: #fdfdfd;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+header .search-bar {
+  width: 185px;
+  height: 41px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 27px;
+  border: 1px solid #fff;
+  background: transparent;
+  overflow: hidden;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 41px;
+}
+header .search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  background: transparent;
+  height: 100%;
+}
+.header .func {
+  margin-left: 16px;
+  display: flex;
+  gap: 16px;
+}
+.footer {
+  margin-top: 70px;
+  background: #081748;
+}
+.footer .footer-row {
+  padding: 62px 180px 62px 150px;
+  padding-top: 62px;
+  display: flex;
+  gap: 20px;
+}
+.footer .footer-row .footer-column .i4 {
+  margin-top: 31px;
+  width: 278px;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer .footer-row .footer-column .footer-title {
+  margin-bottom: 31px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.footer-column .footer-links a,
+p {
+  margin-top: 8px;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer-column .social-icons {
+  display: flex;
+  justify-content: space-between;
+}
+.divide {
+  width: 1440px;
+  height: 1px;
+  background: #fff;
+}
+.footer .footer-bottom {
+  text-align: center;
+  padding: 37px 450px;
+}
+.main-content .body-food {
+  display: flex;
+  margin-top: 69px;
+  padding-left: 157px;
+  padding-right: 82px;
+}
+.body-food .col-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+.body-food .col-1 img {
+  width: 99px;
+  height: 94px;
+  flex-shrink: 0;
+}
+.main-content .body-food .col-2 img {
+  margin-left: 21px;
+  width: 480px;
+  height: 480px;
+  object-fit: cover;
+}
+.main-content .body-food .col-3 {
+  margin-left: 60px;
+}
+.main-content .body-food .col-3 h2 {
+  color: #081748;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.body-food .col-3 .rate {
+  margin-top: 23px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.body-food .col-3 .rate .score {
+  text-decoration: underline;
+  color: black;
+}
+.body-food .col-3 .rate div {
+  width: 1px;
+  height: 25px;
+  background: #757575;
+}
+.body-food .col-3 .rate p {
+  color: black;
+}
+.body-food .col-3 .price {
+  display: flex;
+  margin-top: 84px;
+  color: #081748;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.body-food .col-3 .quantity {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.body-food .col-3 .quantity label {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.body-food .col-3 .quantity input {
+  width: 40px;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 24px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.body-food .col-3 .buy {
+  padding: 22px 33px;
+  background: #081748;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  gap: 12px;
+}
+.body-food .col-3 .buy a {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.more-infor {
+  margin-top: 133px;
+  padding-left: 157px;
+  padding-right: 82px;
+}
+.more-infor .head {
+  gap: 71px;
+  display: flex;
+}
+.more-infor .head h2 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.more-infor p {
+  margin-top: 36px;
+  color: #2b2d42;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.more-infor h1 {
+  margin-top: 90px;
+  color: #081748;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.recomend {
+  margin-top: 92px;
+  padding-left: 157px;
+  padding-right: 82px;
+}
+.recomend .product-list {
+  display: flex;
+  gap: 80px;
+  position: relative;
+}
+.recomend .product-list .product {
+  position: relative;
+}
+.recomend .product-list .product .thumb {
+  border-radius: 21px;
+  width: 322px;
+  height: 322px;
+  object-fit: cover;
+}
+.recomend .product-list .product .thong-tin {
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+}
+.recomend .product-list .product .thong-tin h3 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.product .thong-tin .gia {
+  display: flex;
+  justify-content: space-between;
+}
+.product .thong-tin .gia p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.move1,
+.move2 {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  width: 41px;
+  height: 67px;
+  flex-shrink: 0;
+  z-index: 100;
+}
+.move1 {
+  left: 20px;
+  top: 40%;
+}
+.move2 {
+  right: 90px;
+  top: 40%;
+}

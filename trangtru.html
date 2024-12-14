@@ -1,11 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NightMeals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    
+    <!-- header -->
+    <header class="header">
+        <div class="main-content">
+            <div class="body">
+                <a class="logo" href="#!">NIGHTMEALS</a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#!">Trang chủ</a></li>
+                        <li><a href="#!">Danh mục sản phẩm </a></li>
+                        <li><a href="#!">Khuyến mãi</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm">
+                </div>
+                <div class="func">
+                    <a href="#!"><img src="./icon/Vector.svg" alt=""></a>
+                    <a href="#!"><img src="./icon/Vector2.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main -->
+    <main>
+        <div class="first">
+            <div class="main-content">
+                <div class="left">
+                    <h1>Đêm Nay Ăn Gì?
+                        NightMeals Có
+                        Tất Cả!
+                    </h1>
+                    <p class="desc">Night Meals mang đến cho bạn những lựa chọn tuyệt vời: từ hải sản tươi ngon đến các
+                        món ăn đêm hấp dẫn, tất cả được chuẩn bị chu đáo và giao tận nơi. Đáp ứng mọi khẩu vị, mọi lúc
+                        bạn cần!
+                    </p>
+                    <button class="btn">
+                        <p>GỌI MÓN NGAY</p>
+                        <img src="./icon/goright.svg" alt="">
+                    </button>
+                </div>
+                <div class="right">
+                    <img src="./img/6b449d93a37493640306c3e3efbf94cd.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="second">
+            <div class="main-content">
+                <div class="left">
+                    <h1>NightMeals - Đem ẩm thức về đêm đến gần bạn hơn</h1>
+                    <p>Chúng tôi tự hào mang đến những bữa ăn đêm chất lượng, từ hải sản tươi ngon đến những món ăn vặt
+                        hấp dẫn. Với NightMeals, bữa đêm của bạn không chỉ tiện lợi mà còn đầy cảm xúc.</p>
+                </div>
+                <div class="right">
+                    <img src="./img/6e8e8842acff807c1f61e57f5ef26604.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="third">
+            <div class="main-content">
+                <div class="serv">
+                    <h2>Dịch vụ</h2>
+                    <p>Chúng tôi cung cấp các món ăn nóng hổi, ngon miệng và an toàn, phục vụ nhanh chóng từ 20h đến 5h
+                        sáng. Với thực đơn phong phú và dịch vụ tận tâm, NightMeals luôn sẵn sàng mang đến bữa ăn đêm
+                        tiện
+                        lợi, chất lượng ngay tại nhà bạn.</p>
+                    <button class="btn">TRẢI NGHIỆM NGAY !</button>
+                </div>
+                <div class="features">
+                    <div class="feature">
+                        <img src="./icon/food.svg" alt="">
+                        <h3>Món ăn tươi ngon</h3>
+                        <p>Thực phẩm tươi ngon, đảm bảo vệ sinh</p>
+                    </div>
+                    <div class="feature">
+                        <img src="./icon/ship.svg" alt="">
+                        <h3>Giao hàng nhanh</h3>
+                        <p>Chỉ 30 phút, món ăn đã sẵn sàng trên bàn</p>
+                    </div>
+                    <div class="feature">
+                        <img src="./icon/night.svg" alt="">
+                        <h3>Phục vụ 24/7</h3>
+                        <p>Luôn sẵn sàng đồng hành cùng bạn dù là 20h tối hay 4h sáng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fourth">
+            <div class="main-content">
+                <div class="head">
+                    <h2>MENU</h2>
+                    <p>Các món ăn được đề xuất</p>
+                </div>
+                <nav class="nav">
+                    <ul class="menu-nav">
+                        <li><a href="#">Đồ uống</a></li>
+                        <li><a href="#">Đồ ăn vặt</a></li>
+                        <li class="active"><a href="#">Các món cơm</a></li>
+                        <li><a href="#">Các món hải sản</a></li>
+                    </ul>
+                </nav>
+                <div class="food-list do-uong">
+                    <div class="foot-item">
+                        <img src="./img/1.jpg" alt="" class="thumb">
+                        <h2>Trà sữa matcha</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>30.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/2.jpg" alt="" class="thumb">
+                        <h2>Trà đào cam sả</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>25.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/3.png" alt="" class="thumb">
+                        <h2>Sinh tố vải</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>30.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/4.jpg" alt="" class="thumb">
+                        <h2>Trà vải</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>45.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/5.jpg" alt="" class="thumb">
+                        <h2>Nước chanh leo</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>35.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/6.jpg" alt="" class="thumb">
+                        <h2>Cacao nóng</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>825.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-list do-an-vat">
+                    <div class="foot-item">
+                        <img src="./img/7.jpg" alt="" class="thumb">
+                        <h2>Thịt xiên nướng</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>30.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/8.jpg" alt="" class="thumb">
+                        <h2>Phồng tôm</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>20.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/9.jpg" alt="" class="thumb">
+                        <h2>Bánh tráng trộn</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>25.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/10.jpg" alt="" class="thumb">
+                        <h2>Nem chua rán</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>30.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/11.jpg" alt="" class="thumb">
+                        <h2>Mì cay trộn</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>35.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/12.jpg" alt="" class="thumb">
+                        <h2>Bò khô</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>25.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-list cac-mon-com active">
+                    <div class="foot-item">
+                        <img src="./img/13.jpg" alt="" class="thumb">
+                        <h2>Cơm trộn</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>40.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/14.jpg" alt="" class="thumb">
+                        <h2>Cơm tấm</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>35.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/15.jpg" alt="" class="thumb">
+                        <h2>Cơm rang thập cẩm</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>40.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/16.jpg" alt="" class="thumb">
+                        <h2>Cơm rang dưa bò</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>40.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/17.jpg" alt="" class="thumb">
+                        <h2>Cơm gà xối mỡ</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>40.000 </h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/18.jpg" alt="" class="thumb">
+                        <h2>Cơm chiên mực</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>40.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-list hai-san">
+                    <div class="foot-item">
+                        <img src="./img/19.jpg" alt="" class="thumb">
+                        <h2>Mực nướng</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>50.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/20.jpg" alt="" class="thumb">
+                        <h2>Mực chiên</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>60.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/21.jpg" alt="" class="thumb">
+                        <h2>Ngao hấp thái</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>100.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/22.png" alt="" class="thumb">
+                        <h2>Mực hấp bia</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>80.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/23.jpg" alt="" class="thumb">
+                        <h2>Tôm nướng</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>50.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                    <div class="foot-item">
+                        <img src="./img/24.jpg" alt="" class="thumb">
+                        <h2>Sò huyết xào me</h2>
+                        <div class="infor">
+                            <img src="./icon/vote.svg" alt="">
+                            <img src="./icon/dong.svg" alt="">
+                            <h3>80.000</h3>
+                            <a href="#!"><img src="./icon/more.svg" alt="" class="plus"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="more">
+                    <button class="btn">Xem thêm
+                        <img src="./icon/down.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="fifth">
+            <div class="main-content">
+                <img src="./img/25.png" alt="">
+                <div class="right">
+                    <h1>Đăng kí nhận bản tin của chúng tôi để nhận ngay <strong>ưu đãi 20%</strong></h1>
+                    <div class="gmail">
+                        <input type="text" placeholder="NightMeals@gmail.com">
+                        <button class="btn">Đăng Ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sixth">
+            <div class="main-content">
+                <h1>ĐÁNH GIÁ TỪ KHÁCH HÀNG</h1>
+                <div class="comments">
+                    <div class="comment">
+                        <div class="name">Tuấn Anh Lê</div>
+                        <img src="./icon/vote.svg" alt="">
+                        <p>Cơm ở đây ngon vl ae ạ, ship cũng nhanh nữa. Tôi chưa thấy ghẹ ở đâu múp như ở đây.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="name">Tuấn Anh Lê</div>
+                        <img src="./icon/vote.svg" alt="">
+                        <p>Cơm ở đây ngon vl ae ạ, ship cũng nhanh nữa. Tôi chưa thấy ghẹ ở đâu múp như ở đây.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="name">Tuấn Anh Lê</div>
+                        <img src="./icon/vote.svg" alt="">
+                        <p>Cơm ở đây ngon vl ae ạ, ship cũng nhanh nữa. Tôi chưa thấy ghẹ ở đâu múp như ở đây.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="main-content">
+            <div class="footer-row">
+                <div class="footer-column">
+                    <h3 class="footer-title">NIGHTMEALS</h3>
+                    <p class="i4">NIGHTMEALS - Đem ẩm thực về đêm đến gần bạn hơn</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Danh mục món ăn</a></li>
+                        <li><a href="#">Khuyến mãi</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên hệ</h3>
+                    <p>Hotline: 0123-456-789</p>
+                    <p>Email: NightMeals@gmail.com</p>
+                    <p>Thời gian phục vụ: 20h - 4h sáng</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Mạng xã hội</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="./icon/yt.svg" alt="YouTube"></a>
+                        <a href="#"><img src="./icon/it.svg" alt="Instagram"></a>
+                        <a href="#"><img src="./icon/fb.svg" alt="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="divide"></div>
+            <div class="footer-bottom">
+                <p>© 2024 NightMeals. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
