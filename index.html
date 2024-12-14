@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightmeals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS cho Header */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif; /* Chọn font tương tự */
+            background-image: url("https://via.placeholder.com/1920x1080"); /* Thêm hình nền */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.5); /* Màu nền trắng trong suốt */
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e8e8; /* Đường kẻ dưới header */
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: #192857; /* Màu xanh đậm cho logo */
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: #192857;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .right-elements {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 20px; /* Bo tròn ô tìm kiếm */
+            overflow: hidden;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 8px 12px;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-box button {
+            background-color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .search-box button i {
+          color: #192857;
+        }
+
+        .cart-icon, .user-icon {
+            color: #192857;
+            font-size: 20px;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        /* Thêm icon search, cart, user từ Font Awesome */
+        .fa {
+            font-family: 'Font Awesome 5 Free'; /* Hoặc 'Font Awesome 6 Free' nếu bạn dùng bản 6 */
+            font-weight: 900; /* Solid icons */
+        }
+
+        .fa-search:before {
+            content: "\f002";
+        }
+
+        .fa-shopping-cart:before {
+            content: "\f07a";
+        }
+        .fa-user:before{
+            content: "\f2bd";
+        }
+
+        /* Responsive (Tùy chọn - Cơ bản) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .right-elements {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            .search-box input {
+              width: auto;
+              flex-grow: 1;
+            }
+        }
+
+        /* CSS cho Giỏ hàng */
+        .cart-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng trong suốt */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 95%;
+            max-width: 800px; /* Điều chỉnh độ rộng tối đa của giỏ hàng */
+            margin: 30px auto;
+            overflow-y: auto;
+            max-height: 500px; /* Giới hạn chiều cao và thêm scrollbar */
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #223464;
+        }
+
+        .cart-header i {
+            margin-right: 10px;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-table th {
+            color: #223464;
+            font-weight: bold;
+            border-bottom: 2px solid #223464;
+        }
+        .cart-table thead tr th:first-child{
+          width: 5%;
+        }
+        .cart-table thead tr th:nth-child(2){
+          width: 40%;
+        }
+        .cart-table thead tr th:nth-child(3){
+          width: 20%;
+        }
+        .cart-table thead tr th:nth-child(4){
+          width: 15%;
+        }
+        .cart-table thead tr th:last-child{
+          width: 20%;
+        }
+        .cart-table td:first-child {
+            text-align: center;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .product-info img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px; /* Thêm border-radius cho ảnh sản phẩm */
+        }
+
+        .price {
+            white-space: nowrap;
+            color: #223464;
+        }
+
+        .price sup {
+            font-size: 14px;
+        }
+
+        .price span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .quantity button {
+            background-color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #223464;
+        }
+
+        .quantity span {
+            margin: 0 10px;
+            font-size: 16px;
+            color: #223464;
+        }
+
+        /* CSS cho Footer và Chọn tất cả */
+        .footer-container{
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 30px;
+            
+        }
+        .select-all-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng trong suốt */
+            color: #333;
+            border-radius: 10px;
+            width: 95%;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .select-all-section label {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .select-all-section input {
+            margin-right: 10px;
+        }
+
+        .select-all-section .total-price {
+            font-weight: bold;
+            margin-left: auto; /* Đẩy "Tổng thanh toán" và giá tiền sang phải */
+            margin-right: 20px;
+        }
+
+        .select-all-section .total-price sup {
+            font-size: 14px;
+        }
+
+        .select-all-section .total-price span {
+            font-size: 18px;
+        }
+
+        .select-all-section button {
+            background-color: #223464;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+          background-color: #192857;
+          padding: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            margin-bottom: 20px;
+            min-width: 200px; /* Đảm bảo các cột không bị quá hẹp trên mobile */
+        }
+
+        .footer-column h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-right: 10px;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .social-icons a:hover{
+          background-color: #fff;
+          color: #223464;
+          border: 1px solid #223464;
+        }
+        .footer-bottom{
+          width: 95%;
+          border-top: 1px solid #fff;
+          margin: 0 auto;
+          padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">NIGHTMEALS</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Danh mục sản phẩm</a></li>
+                    <li><a href="#">Khuyến mãi</a></li>
+                </ul>
+            </nav>
+            <div class="right-elements">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+                <a href="#" class="cart-icon"><i class="fa fa-shopping-cart"></i></a>
+                <a href="#" class="user-icon"><i class="fa fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Giỏ hàng</span>
+        </div>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td>
+                        <div class="product-info">
+                            <img src="https://via.placeholder.com/80x80" alt="Product Image">
+                        </div>
+                    </td>
+                    <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                    <td>
+                        <div class="quantity">
+                            <button>+</button>
+                            <span>1</span>
+                            <button>-</button>
+                        </div>
+                    </td>
+                    <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>
+                        <div class="product-info">
+                            <img src="https://via.placeholder.com/80x80" alt="Product Image">
+                        </div>
+                    </td>
+                    <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                    <td>
+                        <div class="quantity">
+                            <button>+</button>
+                            <span>1</span>
+                            <button>-</button>
+                        </div>
+                    </td>
+                    <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>
+                        <div class="product-info">
+                            <img src="https://via.placeholder.com/80x80" alt="Product Image">
+                        </div>
+                    </td>
+                    <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                    <td>
+                        <div class="quantity">
+                            <button>+</button>
+                            <span>1</span>
+                            <button>-</button>
+                        </div>
+                    </td>
+                    <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>
+                      <div class="product-info">
+                          <img src="https://via.placeholder.com/80x80" alt="Product Image">
+                      </div>
+                  </td>
+                  <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                  <td>
+                      <div class="quantity">
+                          <button>+</button>
+                          <span>1</span>
+                          <button>-</button>
+                      </div>
+                  </td>
+                  <td class="price"><sup>₫</sup><span>X0.000</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>
+                    <div class="product-info">
+                        <img src="https://via.placeholder.com/80x80" alt="Product Image">
+                    </div>
+                </td>
+                <td class="price"><sup>₫</sup><span>X0.000</span></td>
+                <td>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>-</button>
+                    </div>
+                </td>
+                <td class="price"><sup>₫</sup><span>X0.000</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer-container">
+      <div class="select-all-section">
+          <label>
+              <input type="checkbox">
+              Chọn tất cả (5 sản phẩm)
+          </label>
+          <span>Tổng thanh toán:</span>
+          <span class="total-price"><sup>₫</sup><span>X0.000</span></span>
+          <button>Thanh toán</button>
+      </div>
+      <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>NIGHTMEALS</h3>
+                <p>NIGHTMEALS - Đem ẩm thực về đêm đến gần bạn hơn</p>
+            </div>
+            <div class="footer-column">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Danh mục món ăn</a></li>
+                    <li><a href="#">Khuyến mãi</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Liên hệ</h3>
+                <p>Hotline: 0123-456-789</p>
+                <p>Email: NightMeals@gmai.com</p>
+                <p>Thời gian phục vụ: 20h - 4h sáng</p>
+            </div>
+            <div class="footer-column">
+                <h3>Mạng xã hội</h3>
+                <div class="social-icons">
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+      </footer>
+      <div class="footer-bottom">
+      </div>
+    </div>
+</body>
+</html>
